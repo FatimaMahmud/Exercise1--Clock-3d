@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="demo">TIME :</p>
+
+<button id= "ok" onclick="myStopFunction()">Stop me</button>
+
+<script>
+var myVar = setInterval(function(){ myTimer() }, 1000);
+var btn = document.getElementById("ok");
+
+function myTimer() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("demo").innerHTML = t;
+}
+
+
+function myStopFunction() {
+
+clearInterval(myVar);
+document.getElementById("ok").innerHTML = "playagain";
+if(document.getElementById("ok").innerHTML == "playagain"){
+PlayAgain();
+
+}
+}
+
+function PlayAgain(){
+ var myVar = setInterval(function(){ myTimer() }, 1000);
+}
+
+
+</script>
+
+</body>
+</html>
